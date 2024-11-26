@@ -5,7 +5,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name = "Index"),
-    path('harrypotter', views.harrypotter, name = "HarryPotter"),
-    path('lordofring', views.lordofring, name = "LordofRing"),
-    path('janeeyre', views.janeeyre, name = "JaneEyre"),
+    path('<id>/onebook', views.onebook, name="OneBook")
 ]

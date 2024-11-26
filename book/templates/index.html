@@ -4,13 +4,31 @@
 
 {% block content %} 
 
-<h1>書名列表</h1>
+<div class="container">
 
-<p><a href="{% url 'HarryPotter' %}">哈利波特</a></p>
+    <h1>書名列表<h1>
 
-<p><a href="{% url 'LordofRing' %}">魔戒</a></p>
-
-<p><a href="{% url 'JaneEyre' %}">簡愛</a></p>
+    <table class="table">
+        <tr>
+            <th>書名</th>
+            <th>作者</th>
+            <th>出版社</th>
+            <th>出版日期</th>
+            <th>定價</th>
+        </tr>        
+        
+        {% for b in bb %}
+        <tr>
+            <td><a href="{{b.id}}/onebook">{{b.bookname}}</a></td>
+            <td>{{b.author}}</td>
+            <td>{{b.publisher}}</td>
+            <td>{{b.pubdate}}</td>
+            <td>{{b.price}}</td>
+        </tr>
+        {% endfor %}
+        
+    </table>
+</div>
 
 
 {% endblock %}
